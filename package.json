@@ -1,0 +1,39 @@
+{
+  "name": "samplecap4",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.2.0",
+    "@sap/cds": "^8.1.1",
+    "@sap/xssec": "^4.2.1",
+    "express": "^4",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^7",
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "deploy": "cf deploy mta_archives/samplecap4_1.0.0.mtar",
+    "undeploy" : "cf undeploy samplecap4 --delete-services --delete-service-keys --delete-service-brokers"
+  },
+  "cds": {
+    "requires": {
+      "API_SALES_ORDER_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_SALES_ORDER_SRV",
+        "credentials": {
+          "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV",
+          "headers": {
+            "APIKey": "IPYEPU1PtEMMF5Pb2DSuqVby6ADmj7iO"
+          }
+        }
+      },
+      "auth": "xsuaa"
+    }
+  }
+}
