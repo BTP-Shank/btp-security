@@ -14,7 +14,7 @@
       "name": "SalesOrderType",
       "description": "SalesOrderType",
       "valueType": "string",
-      "valueRequired": true
+      "valueRequired": false
     }
   ],
   "role-templates": [
